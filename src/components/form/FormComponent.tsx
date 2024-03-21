@@ -9,7 +9,6 @@ import {
   validationSchema,
 } from "..";
 import Input from "../ui/InputField/InputField";
-import { toast } from "react-toastify";
 import { useContext } from "react";
 import { AUTH_ACTION, AuthContext, Task } from "../../context";
 import { createTodo } from "../..";
@@ -22,12 +21,9 @@ const FormComponent = () => {
       const data = await createTodo(values);
 
       dispatch({ type: AUTH_ACTION.ADD_TASK, payload: { task: { ...data } } });
-
-      toast.success("¡La tarea se creó correctamente!");
       formikHelpers.resetForm()
     } catch (error) {
-      console.error("Error al crear tarea:", error);
-      toast.error(`Se produjo un error`);
+      throw new Error("Error al crear un Todo")
     }
   };
 
@@ -56,7 +52,7 @@ const FormComponent = () => {
                 type={"text"}
                 value={values.description}
                 name="description"
-                placeholder="Description"
+                placeholder="Descripcion"
               />{" "}
               <ErrorMessage
                 name="description"

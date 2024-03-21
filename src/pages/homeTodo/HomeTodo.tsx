@@ -36,7 +36,7 @@ export function HomeTodo() {
       <FormComponent />
       <h3>Task to do</h3>
       <ContainerTask className="scroll">
-        {unCompletedTasks.length === 0 && <p>Not pending tasks</p>}
+        {unCompletedTasks.length === 0 && <p>No hay tareas pendientes</p>}
         {unCompletedTasks.map((task) => (
           <Task
             key={`${task.id}-un-done`}
@@ -48,7 +48,7 @@ export function HomeTodo() {
       </ContainerTask>
       <h3>Done</h3>
       <ContainerHome className="scroll">
-        {completedTasks.length === 0 && <p>Not tasks completed</p>}
+        {completedTasks.length === 0 && <p>No hay tareas completadas</p>}
         {completedTasks.map((task) => (
           <Task
             key={`${task.id}-done`}

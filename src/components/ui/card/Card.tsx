@@ -8,7 +8,6 @@ import {
   removeTodo,
 } from "../../..";
 import EditTodo from "../../../pages/updateTodo/UpdateTodo";
-import { toast } from "react-toastify";
 import { AUTH_ACTION, useAuthContext } from "../../../context";
 
 export function Task({ task, onToggleTodo, onToggleDone }: CardProps) {
@@ -22,19 +21,14 @@ export function Task({ task, onToggleTodo, onToggleDone }: CardProps) {
   const handleRemoveTodo = async (id: string) => {
     try {
       await removeTodo(id);
-      toast.success(`Task deleted successfully`);
 
       const newTodos = state.todos.filter((todo) => todo.id !== Number(id));
       dispatch({
         type: AUTH_ACTION.SET_ALL_TODOS,
         payload: { todos: newTodos },
       });
-
-
     } catch (error) {
-      console.error("Error when deleting task:", error);
-      toast.error(`Error when deleting task`);
-
+      throw new Error("Error al eliminar un Todo")
     }
   };
 

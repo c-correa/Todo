@@ -1,7 +1,6 @@
 import feathers from "@feathersjs/feathers";
 import rest from "@feathersjs/rest-client";
 import { LoginValues, TodoEditValues } from "../pages";
-import { CreateTodo } from "..";
 
 const app = feathers();
 const token = localStorage.getItem("token");
@@ -54,7 +53,7 @@ export const getAllTasks = async () => {
       headers: { ...header },
     });
   } catch (error) {
-    console.error("Error al obtener tareas:", error);
+    console.error("Error al obtener todas tareas:", error);
     throw error;
   }
 };
@@ -65,12 +64,12 @@ export const getOneTask = async (id: string) => {
       headers: { ...header },
     });
   } catch (error) {
-    console.error("Error al obtener tarea:", error);
+    console.error("Error al obtener una tarea:", error);
     throw error;
   }
 };
 
-export const createTodo = async (values: CreateTodo) => {
+export const createTodo = async (values) => {
   try {
     return await app.service(`todo`).create(
       {
@@ -83,7 +82,7 @@ export const createTodo = async (values: CreateTodo) => {
       }
     );
   } catch (error) {
-    console.error("Error al obtener tarea:", error);
+    console.error("Error al crear tarea:", error);
     throw error;
   }
 };
@@ -94,7 +93,7 @@ export const updateTodo = async (id: string, values: TodoEditValues) => {
       headers: { ...header },
     });
   } catch (error) {
-    console.error("Error al obtener tarea:", error);
+    console.error("Error al actualizar tarea:", error);
     throw error;
   }
 };
@@ -105,7 +104,7 @@ export const removeTodo = async (id: string) => {
       headers: { ...header },
     });
   } catch (error) {
-    console.error("Error al obtener tarea:", error);
+    console.error("Error al remover la tarea:", error);
     throw error;
   }
 };

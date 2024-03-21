@@ -20,11 +20,11 @@ export const AppRouter = () => {
       <Route
         path="/todo"
         element={
-          // <ProtectedRoute>
+          <ProtectedRoute>
             <Layout>
               <HomeTodo />
             </Layout>
-          // </ProtectedRoute>
+        </ProtectedRoute>
         }
       />
 

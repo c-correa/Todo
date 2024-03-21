@@ -45,7 +45,7 @@ export function useUser() {
       }
       return record;
     } catch (error) {
-      console.error("Error al obtener todos:", error);
+      throw new Error("Error al obtener todos los Todos")
     }
   }, [dispatch]);
 
