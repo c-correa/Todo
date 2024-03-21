@@ -1,0 +1,40 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.container-icon-card {
+  display: flex;
+  align-items: center;
+}
+
+.card-done {
+  color: black;
+}
+
+.scroll::-webkit-scrollbar {
+  width: 10px;
+}
+
+.scroll::-webkit-scrollbar-track {
+  background-color: 1D1825;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+  background-color: #875bce;
+  border-radius: 5px;
+  border: 2px solid #1d1825;
+}
+
+.scroll::-webkit-scrollbar-thumb:hover {
+  cursor: pointer;
+}
+.done {
+  color: black;
+}
+
+.error {
+  font-size: 12px;
+  color: red;
+}
