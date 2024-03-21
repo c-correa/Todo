@@ -1,6 +1,7 @@
 import { Form, Formik } from "formik";
 import {
   CloseButton,
+  ContainerForm,
   Input,
   ModalBackground,
   ModalContent,
@@ -55,6 +56,7 @@ const Modal = ({ isOpen, onClose, task }) => {
         >
           {({ isSubmitting, values, handleChange }) => (
             <Form>
+              <ContainerForm>
               <Input
                 type="text"
                 name="title"
@@ -82,6 +84,7 @@ const Modal = ({ isOpen, onClose, task }) => {
               <SubmitButton type="submit" disabled={isSubmitting}>
                 Enviar
               </SubmitButton>
+              </ContainerForm>
             </Form>
           )}
         </Formik>
@@ -92,9 +95,7 @@ const Modal = ({ isOpen, onClose, task }) => {
 
 const EditTodo = ({ isOpen, setIsOpen, task }) => {
   return (
-    <div>
       <Modal isOpen={isOpen} onClose={setIsOpen} task={task} />
-    </div>
   );
 };
 

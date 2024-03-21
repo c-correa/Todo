@@ -22,6 +22,11 @@ export const ModalContent = styled.div`
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 `;
 
+export const ContainerForm = styled.div`
+  display: flex;
+  flex-direction:column
+`;
+
 export const CloseButton = styled.button`
   position: absolute;
   top: 10px;

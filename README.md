@@ -5,14 +5,15 @@
 Esta aplicación es un sistema de gestión de tareas (ToDo) desarrollado utilizando Vite, React, y TypeScript. Permite a los usuarios gestionar sus tareas diarias de manera eficiente a través de una interfaz intuitiva. La aplicación consta de dos vistas principales: una pantalla de login y la vista principal de ToDo donde se maneja la lógica de la aplicación.
 
 ## Rutas
+
 - /login
 - /todo
 
 ## Características
 
 - **Autenticación de Usuarios**: Acceso mediante credenciales predefinidas.
-Correo: 19correa99@gmail.com
-Contraseña: SecurePassword
+  Correo: 19correa99@gmail.com
+  Contraseña: SecurePassword
 - **CRUD de Tareas**: Los usuarios pueden crear, leer, actualizar y eliminar tareas.
 
 ## Tecnologías Utilizadas
@@ -41,3 +42,4 @@ git clone https://tu-repositorio.git](https://github.com/c-correa/Todo.git)https
 yarn
 
 yarn run dev
+```
